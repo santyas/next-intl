@@ -37,12 +37,12 @@ export default async function LocaleLayout({
 
   return (
       <html lang={locale}>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <IntlPolyfills/>
-          <body className={inter.className}>
-              {children}
-          </body>
-        </NextIntlClientProvider>
+        <body className={inter.className}>
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            {children}
+            <IntlPolyfills/>
+          </NextIntlClientProvider>
+        </body>
     </html>
   )
 }
